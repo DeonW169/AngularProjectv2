@@ -8,14 +8,8 @@
  * Controller of the myAppApp
  */
 angular.module('myAppApp')
-  	.controller('LoginCtrl', function ($cookies, $scope, login, $location) 
+  	.controller('LoginCtrl', function ($cookies, $scope, loginService, $location) 
   	{
-    	this.awesomeThings = [
-      	'HTML5 Boilerplate',
-      	'AngularJS',
-      	'Karma'
-    	];
-
 	    $scope.checkCookies = function()
 	    {
 	 		if($cookies.get('token') == undefined )
@@ -37,7 +31,7 @@ angular.module('myAppApp')
 
 	  	$scope.authenticate = function()
 	  	{
-	  		login.userlogin($scope.userName, $scope.userPassword).then(
+	  		loginService.userlogin($scope.userName, $scope.userPassword).then(
   			function (response) 
 	  		{
 	  			console.log(response);

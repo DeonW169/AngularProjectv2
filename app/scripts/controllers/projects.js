@@ -8,28 +8,38 @@
  * Controller of the myAppApp
  */
 angular.module('myAppApp')
-  	.controller('ProjectsCtrl', function ($scope, projects, $cookies, $location) 
+  	.controller('ProjectsCtrl', function ($scope, projectsService, $cookies, $location) 
   	{
-    	this.awesomeThings = [
-      	'HTML5 Boilerplate',
-      	'AngularJS',
-      	'Karma'
-    	];
+    	$scope.projects = [];
+
+    	$scope.getProjects = function () 
+    	{
+			projectsService.refreshProjects()
+			.then(function(projects) 
+			{
+				$scope.projects = projects;
+			}, 
+			function (error) 
+			{
+				console.error(error);
+			});
+		};
 
 	    $scope.checkScope = function()
 	    {
             if($cookies.get('token') == undefined)
             {
-              console.log('has not been defined yet');
+              console.log('no defined cookies');
               $location.path('/index');
             }
             else
             {
-                projects.getProjects().then(function (response) 
+                projectsService.getProjects().then(function (response) 
                 {
-                    $scope.projects = response.data;
+                    $scope.projectsService = response.data;
                 }, 
-                function (error) {
+                function (error) 
+                {
                     console.error(error);
                 });              
             }  
@@ -40,5 +50,6 @@ angular.module('myAppApp')
       	{
          	$scope.checkScope();
       	};
+
       	init(); 
   	});	
