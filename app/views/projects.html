@@ -1,4 +1,4 @@
-<div ng-init="getProjects()">
+<div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="panel-title"><strong>Projects</strong></h3>
@@ -8,22 +8,22 @@
 			<table>
 				<thead>
 					<tr>
-						<th>Title</th>
-						<th>Description</th>
-						<th>Start Date</th>
-						<th>End Date</th>
-						<th>Billable</th>
-						<th>Active</th>
+						<th class="col-md-2">Title</th>
+						<th class="col-md-2">Description</th>
+						<th class="col-md-2">Start Date</th>
+						<th class="col-md-2">End Date</th>
+						<th class="col-md-2">Billable</th>
+						<th class="col-md-2">Active</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="project in projects">
-						<td>{{project.title}}</td>
-						<td>{{project.description}}</td>
-						<td>{{project.start_date}}</td>
-						<td>{{project.end_date}}</td>
-						<td>{{project.is_billable ? "Yes" : "No"}}</td>
-						<td>{{project.is_active ? "Yes" : "No"}}</td>
+						<td class="col-md-2">{{project.title}}</td>
+						<td class="col-md-2">{{project.description}}</td>
+						<td class="col-md-2">{{project.start_date}}</td>
+						<td class="col-md-2">{{project.end_date}}</td>
+						<td class="col-md-2">{{project.is_billable ? "Yes" : "No"}}</td>
+						<td class="col-md-2">{{project.is_active ? "Yes" : "No"}}</td>
 					</tr>
 				</tbody>
 			</table>

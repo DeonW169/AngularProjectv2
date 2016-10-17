@@ -41,7 +41,7 @@ angular.module('myAppApp')
 				url: PROJECT_SERVICE_BASE_URI,
 				headers:
 				{
-					"Authorization": 'Token '+ $cookies.get('token')
+					Authorization: 'Token ' + $cookies.get('token')
 				}
 			})
 			.success(function (response, status, headers, config) 
