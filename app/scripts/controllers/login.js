@@ -8,7 +8,7 @@
  * Controller of the myAppApp
  */
 angular.module('myAppApp')
-  	.controller('LoginCtrl', function ($cookies, $scope, loginService, $location) 
+  	.controller('LoginCtrl', function ($cookies, $scope, loginService, $location ) 
   	{
 	    $scope.checkCookies = function()
 	    {
