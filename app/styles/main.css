@@ -62,7 +62,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 780px;
   }
 
   /* Remove the padding we set earlier */
@@ -83,10 +83,10 @@ body {
 }
 
 /* personal styles added */
-.inputdemoErrors .inputErrorsApp {
-  min-height: 48px; }
+.box-shadow {
+-webkit-box-shadow: inset 0px 0px 3px 2px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 0px 0px 3px 2px rgba(0,0,0,0.75);
+box-shadow: inset 0px 0px 3px 2px rgba(0,0,0,0.75);
 
-.inputdemoErrors md-input-container > p {
-  font-size: 0.8em;
-  text-align: left;
-  width: 100%; }
+
+}

@@ -10,6 +10,7 @@
 angular.module('myAppApp')
   	.controller('ProjectsCtrl', function ($scope, projectsService) 
   	{
+  		let prjCtrl = this;
     	$scope.projects = [];
     	$scope.selectedProject = {};
 
@@ -57,7 +58,7 @@ angular.module('myAppApp')
 
 		$scope.createNewProject = function () 
 		{
-			projectsService.createNewProject(this.selectedProject)
+			projectsService.createNewProject(prjCtrl.selectedProject)
 			.then(function(response, status, headers, config) 
 			{
 				$scope.getProjects();

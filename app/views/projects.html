@@ -1,10 +1,10 @@
-<div data-ng-init="getProjects()">
+<div data-ng-init="getProjects()" ng-controller="ProjectsCtrl as prjCtrl">
 	<div class="panel panel-default">
-		<div class="panel-heading">
+		<div class="panel-heading box-shadow">
 			<h3 class="panel-title"><strong>Projects</strong></h3>
 		</div>
 
-		<div class="panel-body">
+		<div class="panel-body box-shadow">
 			<table>
 				<thead>
 					<tr>
@@ -12,9 +12,9 @@
 						<th class="col-md-2">Description</th>
 						<th class="col-md-2">Start Date</th>
 						<th class="col-md-2">End Date</th>
-						<th class="col-md-2">Billable</th>
-						<th class="col-md-2">Active</th>
-						<th>
+						<th class="col-md-1">Billable</th>
+						<th class="col-md-1">Active</th>
+						<th class="col-md-2" style="text-align: center;">
 							<a data-toggle="modal" data-target="#projectFormModal" ng-click="clearProject();" class="btn btn-sm btn-default" style="border-radius: 20px;">
 								<span class="glyphicon glyphicon-plus"></span>
 							</a>
@@ -27,9 +27,9 @@
 						<td class="col-md-2">{{project.description}}</td>
 						<td class="col-md-2">{{project.start_date}}</td>
 						<td class="col-md-2">{{project.end_date}}</td>
-						<td class="col-md-2">{{project.is_billable ? "Yes" : "No"}}</td>
-						<td class="col-md-2">{{project.is_active ? "Yes" : "No"}}</td>
-						<td>
+						<td class="col-md-1">{{project.is_billable ? "Yes" : "No"}}</td>
+						<td class="col-md-1">{{project.is_active ? "Yes" : "No"}}</td>
+						<td class="col-md-2" style="text-align: center;">
 							<button class="btn btn-xs btn-default" ng-click="getProject(project.pk)" 
 								data-toggle="modal" 
 								data-target="#projectFormModal">
