@@ -8,7 +8,7 @@
  * Controller of the myAppApp
  */
 angular.module('myAppApp')
-  	.controller('ProjectsCtrl', function ($scope, projectsService, $cookies, $location) 
+  	.controller('ProjectsCtrl', function ($scope, projectsService) 
   	{
     	$scope.projects = [];
 
@@ -24,12 +24,4 @@ angular.module('myAppApp')
 				console.error(error);
 			});
 		};
-          
-      	// This has to be at the bottom of your controller
-      	var init = function () 
-      	{
-         	$scope.getProjects();
-      	};
-
-      	init();
   	});	

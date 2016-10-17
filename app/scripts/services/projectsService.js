@@ -10,19 +10,19 @@
 angular.module('myAppApp')
 	.service('projectsService', function ( $q, $http, $cookies, PROJECT_SERVICE_BASE_URI) {
 
-		let service = this;
+		let projectService = this;
 
-		this.projects = [];
+		projectService.projects = [];
 
-		this.refreshProjects = function () 
+		projectService.refreshProjects = function () 
 		{
 			var deferred = $q.defer();
 
-			this.getProjects()
+			projectService.getProjects()
 				.then(function(response, status, headers, config) 
 				{
-					service.projects = response;
-					deferred.resolve(service.projects);
+					projectService.projects = response;
+					deferred.resolve(projectService.projects);
 				}, 
 				function(response, status, headers, config) 
 				{
@@ -32,7 +32,7 @@ angular.module('myAppApp')
 			return deferred.promise;
 		};
 
-		this.getProjects = function () 
+		projectService.getProjects = function () 
 		{
 			var deferred = $q.defer();
 

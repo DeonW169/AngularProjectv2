@@ -44,11 +44,4 @@ angular.module('myAppApp')
             });
 	  	};
 
-        // This has to be at the bottom of your controller
-	    var init = function () 
-	    {
-       		$scope.checkCookies();
-	    };
-
-	    init(); 
   	});
