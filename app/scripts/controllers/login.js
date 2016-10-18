@@ -13,7 +13,7 @@ angular.module('myAppApp')
 	    $scope.checkCookies = function()
 	    {
 	 		if($cookies.get('token') == undefined )
-	 			console.log('has not been defined yet');      
+	 			console.log('no cookies yet');      
  			else
  			{
  				console.log('has been defined')
@@ -43,5 +43,4 @@ angular.module('myAppApp')
               	$scope.userName = '';
             });
 	  	};
-
   	});

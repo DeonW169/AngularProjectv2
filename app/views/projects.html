@@ -44,62 +44,62 @@
 			</table>
 
 			<form name="projectForm" ng-submit="saveProject();" novalidate>
-				<div class="modal fade" id="projectFormModal" tabindex="-1" role="dialog" aria-labelledby="formModelLabel">
+				<div class="modal fade" id="projectFormModal" tabindex="-1" role="dialog" aria-labelledby="projectFormLabel">
 				  	<div class="modal-dialog" role="document">
 				    	<div class="modal-content">
 				      		<div class="modal-header">
 				        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-				        		<h4 class="modal-title" id="formModelLabel">Project Form</h4>
+				        		<h4 class="modal-title" id="projectFormLabel">Project Form</h4>
 				      		</div>
-				      	<div class="modal-body">
-				        	<div class="form-group ng-class: {'has-error': (projectForm.title.$touched || projectForm.$submitted) && projectForm.title.$invalid}">
-								<label class="control-label">Title</label>
-								<input autocomplete="off" class="form-control" name="title" ng-model="selectedProject.title" required>
-								<span class="help-block" ng-show="(projectForm.title.$touched || projectForm.$submitted) && projectForm.title.$error.required">Project title Required</span>
-							</div>
-
-							<div class="form-group ng-class: {'has-error': (projectForm.description.$touched || projectForm.$submitted) && projectForm.description.$invalid}">
-								<label class="control-label">Description</label>
-								<input autocomplete="off" class="form-control" name="description" ng-model="selectedProject.description" required>
-								<span class="help-block" ng-show="(projectForm.description.$touched || projectForm.$submitted) && projectForm.description.$error.required">Project description Required</span>
-							</div>
-
-							<div class="row">
-								<div class="form-group col-md-6 ng-class: {'has-error': (projectForm.start_date.$touched || projectForm.$submitted) && projectForm.start_date.$invalid}">
-									<label class="control-label">Start Date</label>
-									<input autocomplete="off" class="form-control" name="start_date" ng-model="selectedProject.start_date">
+					      	<div class="modal-body">
+					        	<div class="form-group ng-class: {'has-error': (projectForm.title.$touched || projectForm.$submitted) && projectForm.title.$invalid}">
+									<label class="control-label">Title</label>
+									<input autocomplete="off" class="form-control" name="title" ng-model="selectedProject.title" required>
+									<span class="help-block" ng-show="(projectForm.title.$touched || projectForm.$submitted) && projectForm.title.$error.required">Project title Required</span>
 								</div>
 
-								<div class="form-group col-md-6 ng-class: {'has-error': (projectForm.end_date.$touched || projectForm.$submitted) && projectForm.end_date.$invalid}">
-									<label class="control-label">End Date</label>
-									<input autocomplete="off" class="form-control" name="end_date" ng-model="selectedProject.end_date">
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="form-group col-md-6">
-									<label class="control-label">Billable</label>
-									<select class="form-control" ng-model="selectedProject.is_billable">
-										<option ng-selected="selectedProject.is_billable == false" ng-value="0">No</option>
-										<option ng-selected="selectedProject.is_billable == true" ng-value="1">Yes</option>
-									</select>
+								<div class="form-group ng-class: {'has-error': (projectForm.description.$touched || projectForm.$submitted) && projectForm.description.$invalid}">
+									<label class="control-label">Description</label>
+									<input autocomplete="off" class="form-control" name="description" ng-model="selectedProject.description" required>
+									<span class="help-block" ng-show="(projectForm.description.$touched || projectForm.$submitted) && projectForm.description.$error.required">Project description Required</span>
 								</div>
 
-								<div class="form-group col-md-6">
-									<label class="control-label">Active</label>
-									<select class="form-control" ng-model="selectedProject.is_active">
-										<option ng-selected="selectedProject.is_active == false" ng-value="0">No</option>
-										<option ng-selected="selectedProject.is_active == true" ng-value="1">Yes</option>
-									</select>
+								<div class="row">
+									<div class="form-group col-md-6 ng-class: {'has-error': (projectForm.start_date.$touched || projectForm.$submitted) && projectForm.start_date.$invalid}">
+										<label class="control-label">Start Date</label>
+										<input autocomplete="off" class="form-control" name="start_date" ng-model="selectedProject.start_date">
+									</div>
+
+									<div class="form-group col-md-6 ng-class: {'has-error': (projectForm.end_date.$touched || projectForm.$submitted) && projectForm.end_date.$invalid}">
+										<label class="control-label">End Date</label>
+										<input autocomplete="off" class="form-control" name="end_date" ng-model="selectedProject.end_date">
+									</div>
 								</div>
-							</div>
-				      	</div>
-				      	<div class="modal-footer">
-				        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				        	<button type="submit" class="btn btn-primary">Save changes</button>
-				      	</div>
-				    </div>
-				  </div>
+
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label class="control-label">Billable</label>
+										<select class="form-control" ng-model="selectedProject.is_billable">
+											<option ng-selected="selectedProject.is_billable == false" ng-value="0">No</option>
+											<option ng-selected="selectedProject.is_billable == true" ng-value="1">Yes</option>
+										</select>
+									</div>
+
+									<div class="form-group col-md-6">
+										<label class="control-label">Active</label>
+										<select class="form-control" ng-model="selectedProject.is_active">
+											<option ng-selected="selectedProject.is_active == false" ng-value="0">No</option>
+											<option ng-selected="selectedProject.is_active == true" ng-value="1">Yes</option>
+										</select>
+									</div>
+								</div>
+					      	</div>
+					      	<div class="modal-footer">
+					        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        	<button type="submit" class="btn btn-primary">Save changes</button>
+					      	</div>
+					    </div>
+				  	</div>
 				</div>
 			</form>
 		</div>

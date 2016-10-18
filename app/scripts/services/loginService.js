@@ -10,7 +10,9 @@
 angular.module('myAppApp')
     .service('loginService', function ($q, $http, $cookies, AUTH_SERVICE_BASE_URI) 
     {
-		this.userlogin = function(username, password) 
+		let loginService = this;
+
+		loginService.userlogin = function(username, password) 
 		{
 	        var deferred = $q.defer();
 		    var url = AUTH_SERVICE_BASE_URI + 'api-token-auth/';
