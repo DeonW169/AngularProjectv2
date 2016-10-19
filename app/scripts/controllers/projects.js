@@ -93,5 +93,12 @@ angular.module('myAppApp')
 				$scope.updateProject($scope.selectedProject.pk);
 			 else 
 				$scope.createNewProject();
+
+			$scope.dismissModel();
+		};
+
+		$scope.dismissModel = function ()
+		{
+			$('#projectFormModal').modal('hide');
 		};
   	});	
