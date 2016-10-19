@@ -12,22 +12,28 @@ angular.module('myAppApp')
   	{
 	    $scope.checkCookies = function()
 	    {
-	 		if($cookies.get('token') == undefined )
+	 		if($cookies.get('token') === undefined )
+	 		{
 	 			console.log('no cookies yet');      
+	 		}
  			else
  			{
- 				console.log('has been defined')
+ 				console.log('has been defined');
  				$location.path('/projects');
  			}
-	    }
+	    };
 
 	    $scope.validateUser = function()
 	    {
-	     	if ($scope.userName == undefined || $scope.userPassword == undefined)
+	     	if ($scope.userName === undefined || $scope.userPassword === undefined)
+	     	{
 		    	window.alert("Invalid Username and Password Combination");
+	     	}
 	    	else
+	    	{
 	    		$scope.authenticate();
-	    }
+	    	}
+	    };
 
 	  	$scope.authenticate = function()
 	  	{

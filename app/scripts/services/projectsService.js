@@ -19,7 +19,7 @@ angular.module('myAppApp')
 			var deferred = $q.defer();
 
 			projectService.getProjects()
-				.then(function(response, status, headers, config) 
+				.then(function(response) 
 				{
 					projectService.projects = response;
 					deferred.resolve(projectService.projects);
@@ -117,11 +117,11 @@ angular.module('myAppApp')
 				},
 				data: params
 			})
-			.success(function (response, status, headers, config) 
+			.success(function (response) 
 			{
 				deferred.resolve(response);
 			})
-			.error(function (response, status, headers, config) 
+			.error(function (response) 
 			{
 				deferred.reject(response);
 			});
@@ -142,11 +142,11 @@ angular.module('myAppApp')
 				},
 				data: params
 			})
-			.success(function (response, status, headers, config) 
+			.success(function (response) 
 			{
 				deferred.resolve(response);
 			})
-			.error(function (response, status, headers, config) 
+			.error(function (response) 
 			{
 				deferred.reject(response);
 			});

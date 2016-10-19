@@ -10,7 +10,6 @@
 angular.module('myAppApp')
   	.controller('ProjectsCtrl', function ($scope, projectsService) 
   	{
-  		let prjCtrl = this;
     	$scope.projects = [];
     	$scope.selectedProject = {};
 
@@ -30,11 +29,11 @@ angular.module('myAppApp')
 		$scope.deleteProject = function (pk) 
 		{
             projectsService.deleteProject(pk)
-            .then(function(response, status, headers, config) 
+            .then(function() 
             {
                 $scope.getProjects();
             }, 
-            function(response, status, headers ,config) 
+            function() 
             {
                 window.alert('Could not delete the project');
 			});
@@ -45,11 +44,11 @@ angular.module('myAppApp')
 			$scope.clearProject();
 
 			projectsService.getProject(pk)
-			.then(function(response, status, headers, config) 
+			.then(function(response) 
 			{
 				$scope.selectedProject = response;
 			}, 
-			function(response, status, headers, config) 
+			function() 
 			{
 				window.alert('Project not found');
 			});
@@ -59,7 +58,7 @@ angular.module('myAppApp')
 		$scope.createNewProject = function () 
 		{
 			projectsService.createNewProject($scope.selectedProject)
-			.then(function(response, status, headers, config) 
+			.then(function() 
 			{
 				$scope.getProjects();
 			}, 
@@ -72,11 +71,11 @@ angular.module('myAppApp')
         $scope.updateProject = function (pk) 
         {
 			projectsService.updateProject(pk, $scope.selectedProject)
-			.then(function(response, status, headers, config) 
+			.then(function() 
 			{
 				$scope.getProjects();
 			}, 
-			function(response, status, headers, config) 
+			function(response) 
 			{
 				window.alert(response);
 			});
@@ -89,10 +88,15 @@ angular.module('myAppApp')
 
 		$scope.saveProject = function () 
 		{
-			if ($scope.selectedProject.pk) 
+			debugger;
+			if ($scope.selectedProject.pk)
+			{
 				$scope.updateProject($scope.selectedProject.pk);
-			 else 
+			}
+		 	else
+		 	{
 				$scope.createNewProject();
+			}
 
 			$scope.dismissModel();
 		};
